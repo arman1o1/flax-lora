@@ -46,7 +46,7 @@ During training, base weights $W_0$ remain 100% frozen. During deployment, calli
 
 Install directly in editable mode:
 ```bash
-git clone https://github.com/your-username/flax-lora.git
+git clone https://github.com/arman1o1/flax-lora.git
 cd flax-lora
 pip install -e .
 ```

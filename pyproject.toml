@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [
-    { name = "DeepLearning.AI Student" }
+    { name = "arman1o1" }
 ]
 keywords = ["jax", "flax", "nnx", "lora", "peft", "deep-learning", "transformers", "llm"]
 classifiers = [

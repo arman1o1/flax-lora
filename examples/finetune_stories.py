@@ -184,13 +184,12 @@ def main():
     print("  Flax NNX LoRA Fine-Tuning on TinyStories")
     print("=" * 70)
 
-    candidates = [
-        pathlib.Path(__file__).resolve().parent / "data" / "tinystories_sample.txt",
-        pathlib.Path("L3 Data Loading with Grain/TinyStories-1000.txt"),
-    ]
-    data_path = next((p for p in candidates if p.exists()), None)
-    if data_path is None:
-        raise FileNotFoundError("Could not find TinyStories sample data.")
+    data_path = pathlib.Path(__file__).resolve().parent / "data" / "tinystories_sample.txt"
+    if not data_path.exists():
+        raise FileNotFoundError(
+            f"TinyStories sample not found at {data_path}. "
+            "See examples/data/tinystories_sample.txt in the repository."
+        )
     dataloader, tokenizer = create_dataloader(str(data_path), maxlen=64, batch_size=8, max_stories=40)
 
     rngs = nnx.Rngs(42)

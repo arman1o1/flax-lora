@@ -94,13 +94,12 @@ def main():
     optimizer = create_lora_optimizer(model, tx=optax.adamw(learning_rate=5e-4, weight_decay=0.01))
 
     # 4. Load Training Data
-    candidates = [
-        pathlib.Path(__file__).resolve().parent / "data" / "tinystories_sample.txt",
-        pathlib.Path("L3 Data Loading with Grain/TinyStories-1000.txt"),
-    ]
-    data_path = next((p for p in candidates if p.exists()), None)
-    if data_path is None:
-        raise FileNotFoundError("Could not find TinyStories sample data.")
+    data_path = pathlib.Path(__file__).resolve().parent / "data" / "tinystories_sample.txt"
+    if not data_path.exists():
+        raise FileNotFoundError(
+            f"TinyStories sample not found at {data_path}. "
+            "See examples/data/tinystories_sample.txt in the repository."
+        )
     batches = load_story_batches(str(data_path), tokenizer, batch_size=2, maxlen=32, num_batches=10)
     print(f"  Prepared {len(batches)} training batches of shape (2, 32).")
 
