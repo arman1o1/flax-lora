@@ -7,7 +7,7 @@ name = "flax-lora"
 version = "0.1.0"
 description = "Native, modular Low-Rank Adaptation (LoRA) for Flax NNX"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
     { name = "arman1o1" }
@@ -19,7 +19,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
@@ -27,7 +26,7 @@ classifiers = [
 ]
 dependencies = [
     "jax>=0.4.30",
-    "flax>=0.10.0",
+    "flax>=0.11.0",
     "optax>=0.2.0",
     "orbax-checkpoint>=0.6.0",
 ]
