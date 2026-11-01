@@ -1,5 +1,9 @@
 # Flax LoRA (`flax_lora`)
 
+[![CI](https://github.com/arman1o1/flax-lora/actions/workflows/ci.yml/badge.svg)](https://github.com/arman1o1/flax-lora/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+
 > **Native, modular Low-Rank Adaptation (LoRA) for Flax NNX.**
 
 `flax_lora` provides lightweight Parameter-Efficient Fine-Tuning (PEFT) built specifically for the stateful Flax NNX (`flax.nnx`) API. It enables adapting transformer and neural network layers with $<0.25\%$ trainable parameters, provides in-place weight merging for zero runtime deployment overhead, and saves compact (<1.1 MB) adapter checkpoints via Orbax.
