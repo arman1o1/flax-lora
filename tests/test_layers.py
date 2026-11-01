@@ -116,3 +116,15 @@ def test_invalid_parameters():
 
     with pytest.raises(ValueError, match="alpha must be positive"):
         LoRALinear(base, rank=4, alpha=-1.0, rngs=rngs)
+
+
+def test_lora_kwargs_passthrough():
+    """Verify that keyword arguments like out_sharding are passed through cleanly."""
+    rngs = nnx.Rngs(42)
+    base = nnx.Linear(8, 8, rngs=rngs)
+    lora = LoRALinear(base, rank=4, alpha=8.0, rngs=rngs)
+
+    x = jax.random.normal(jax.random.PRNGKey(0), (2, 8))
+    # Passing out_sharding=None should not raise TypeError
+    out = lora(x, out_sharding=None)
+    assert out.shape == (2, 8)

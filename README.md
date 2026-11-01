@@ -230,7 +230,8 @@ tests/test_layers.py::test_forward_computation PASSED
 tests/test_layers.py::test_merge_and_unmerge_linear PASSED
 tests/test_layers.py::test_linear_general_mha PASSED
 tests/test_layers.py::test_invalid_parameters PASSED
-============================== 11 passed ==============================
+tests/test_layers.py::test_lora_kwargs_passthrough PASSED
+============================== 12 passed ==============================
 ```
 
 ---

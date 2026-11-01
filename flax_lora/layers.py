@@ -87,11 +87,12 @@ class LoRALinear(nnx.Module):
     def __call__(
         self,
         x: jax.Array,
-        *,
+        *args,
         deterministic: bool = True,
         rngs: Optional[nnx.Rngs] = None,
+        **kwargs,
     ) -> jax.Array:
-        base_out = self.base_linear(x)
+        base_out = self.base_linear(x, *args, **kwargs)
 
         if self.is_merged:
             return base_out
